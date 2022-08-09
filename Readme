@@ -1,0 +1,16 @@
+install python, pip
+
+running flask app
+- (within tentative opinions directory): 
+    - python3 -m venv venv
+    - . venv/bin/activate
+    - pip install flask
+    - flask --app web run
+
+running script
+- (within virtual environment): 
+    - pip install selenium
+    - pip install webdriver-manager
+
+bot db
+- pip install mysql-connector-python

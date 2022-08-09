@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title> Tentative Opinions Bot </title>
+    <style>
+        .all {
+            text-align: center;
+        }
+    </style>
+</head>
+    <body>
+        <div class="all">
+            <h1>Tentative Opinons Bot</h1>
+            <form action = "#" method = "post">
+                <label for="emails">Type in emails, separated by a space</label><br><br>
+                <input type = "text" name = "emails" /><br><br>
+
+                <label for="courthouses">Select all courthouses you would like to subscribe to:</label><br><br>
+                <select name="courthouses" id="emails" multiple size="28">
+                    <option value="Alhambra Courthouse:  Dept. 3">Alhambra Courthouse: Dept. 3</option>
+                    <option value="Alhambra Courthouse:  Dept. X">Alhambra Courthouse: Dept. X</option>
+                    <option value="Beverly Hills Courthouse:  Dept. 205">Beverly Hills Courthouse: Dept. 205</option>
+                    <option value="Beverly Hills Courthouse:  Dept. 207">Beverly Hills Courthouse: Dept. 205</option>
+                    <option value="Burbank Courthouse:  Dept. B">Burbank Courthouse: Dept. B</option>
+                    <option value="Chatsworth Courthouse:  Dept. F44">Chatsworth Courthouse: Dept. F44</option>
+                    <option value="Chatsworth Courthouse:  Dept. F47">Chatsworth Courthouse: Dept. F47</option>
+                    <option value="Chatsworth Courthouse:  Dept. F49">Chatsworth Courthouse: Dept. F49</option>
+                    <option value="Compton Courthouse:  Dept. A">Compton Courthouse: Dept. A</option>
+                    <option value="Glendale Courthouse:  Dept. D">Glendale Courthouse: Dept. D</option>
+                    <option value="Glendale Courthouse:  Dept. E">Glendale Courthouse: Dept. E</option>
+                    <option value="Governor George Deukmejian Courthouse:  Dept. S10">Governor George Deukmejian Courthouse: Dept. S10</option>
+                    <option value="Governor George Deukmejian Courthouse:  Dept. S13">Governor George Deukmejian Courthouse: Dept. S13</option>
+                    <option value="Governor George Deukmejian Courthouse:  Dept. S26">Governor George Deukmejian Courthouse: Dept. S26</option>
+                    <option value="Governor George Deukmejian Courthouse:  Dept. S27">Governor George Deukmejian Courthouse: Dept. S27</option>
+                    <option value="Governor George Deukmejian Courthouse:  Dept. S28">Governor George Deukmejian Courthouse: Dept. S28</option>
+                    <option value="Governor George Deukmejian Courthouse:  Dept. S29">Governor George Deukmejian Courthouse: Dept. S29</option>
+                    <option value="Inglewood Courthouse:  Dept. 8">Inglewood Courthouse: Dept. 8</option>
+                    <option value="Michael D. Antonovich Antelope Valley Courthouse:  Dept. A14">Michael D. Antonovich Antelope Valley Courthouse: Dept. A14</option>
+                    <option value="Michael D. Antonovich Antelope Valley Courthouse:  Dept. A22">Michael D. Antonovich Antelope Valley Courthouse: Dept. A22</option>
+                    <option value="Norwalk Courthouse:  Dept. C">Norwalk Courthouse: Dept. C</option>
+                    <option value="Norwalk Courthouse:  Dept. F">Norwalk Courthouse: Dept. F</option>
+                    <option value="Pasadena Courthouse:  Dept. R">Pasadena Courthouse: Dept. R</option>
+                    <option value="Pomona Courthouse South:  Dept. O">Pomona Courthouse South: Dept. O</option>
+                    <option value="Santa Monica Courthouse:  Dept. M">Santa Monica Courthouse: Dept. M</option>
+                    <option value="Santa Monica Courthouse:  Dept. N">Santa Monica Courthouse: Dept. N</option>
+                    <option value="Santa Monica Courthouse:  Dept. O">Santa Monica Courthouse: Dept. O</option>
+                    <option value="Santa Monica Courthouse:  Dept. P">Santa Monica Courthouse: Dept. P</option>
+                    <option value="Santa Monica Courthouse:  Dept. R">Santa Monica Courthouse: Dept. R</option>
+                    <option value="Santa Monica Courthouse:  Dept. S">Santa Monica Courthouse: Dept. S</option>
+                    <option value="Spring Street Courthouse:  Dept. 1">Spring Street Courthouse: Dept. 1</option>
+                    <option value="Spring Street Courthouse:  Dept. 10">Spring Street Courthouse: Dept. 10</option>
+                    <option value="Spring Street Courthouse:  Dept. 15">Spring Street Courthouse: Dept. 15</option>
+                    <option value="Spring Street Courthouse:  Dept. 16">Spring Street Courthouse: Dept. 16</option>
+                    <option value="Spring Street Courthouse:  Dept. 25">Spring Street Courthouse: Dept. 25</option>
+                    <option value="Spring Street Courthouse:  Dept. 26">Spring Street Courthouse: Dept. 26</option>
+                    <option value="Spring Street Courthouse:  Dept. 27">Spring Street Courthouse: Dept. 27</option>
+                    <option value="Spring Street Courthouse:  Dept. 28">Spring Street Courthouse: Dept. 28</option>
+                    <option value="Spring Street Courthouse:  Dept. 30">Spring Street Courthouse: Dept. 30</option>
+                    <option value="Spring Street Courthouse:  Dept. 32">Spring Street Courthouse: Dept. 32</option>
+                    <option value="Spring Street Courthouse:  Dept. 7">Spring Street Courthouse: Dept. 7</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 1">Stanley Mosk Courthouse: Dept. 1</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 12">Stanley Mosk Courthouse: Dept. 12</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 14">Stanley Mosk Courthouse: Dept. 14</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 15">Stanley Mosk Courthouse: Dept. 15</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 16">Stanley Mosk Courthouse: Dept. 16</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 17">Stanley Mosk Courthouse: Dept. 17</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 19">Stanley Mosk Courthouse: Dept. 19</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 20">Stanley Mosk Courthouse: Dept. 20</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 24">Stanley Mosk Courthouse: Dept. 24</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 26">Stanley Mosk Courthouse: Dept. 26</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 28">Stanley Mosk Courthouse: Dept. 28</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 30">Stanley Mosk Courthouse: Dept. 30</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 31">Stanley Mosk Courthouse: Dept. 31</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 32">Stanley Mosk Courthouse: Dept. 32</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 34">Stanley Mosk Courthouse: Dept. 34</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 36">Stanley Mosk Courthouse: Dept. 36</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 37">Stanley Mosk Courthouse: Dept. 37</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 38">Stanley Mosk Courthouse: Dept. 38</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 39">Stanley Mosk Courthouse: Dept. 39</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 40">Stanley Mosk Courthouse: Dept. 40</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 41">Stanley Mosk Courthouse: Dept. 41</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 42">Stanley Mosk Courthouse: Dept. 42</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 45">Stanley Mosk Courthouse: Dept. 45</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 46">Stanley Mosk Courthouse: Dept. 46</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 47">Stanley Mosk Courthouse: Dept. 47</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 48">Stanley Mosk Courthouse: Dept. 48</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 49">Stanley Mosk Courthouse: Dept. 49</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 50">Stanley Mosk Courthouse: Dept. 50</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 51">Stanley Mosk Courthouse: Dept. 51</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 52">Stanley Mosk Courthouse: Dept. 52</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 53">Stanley Mosk Courthouse: Dept. 53</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 54">Stanley Mosk Courthouse: Dept. 54</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 55">Stanley Mosk Courthouse: Dept. 55</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 56">Stanley Mosk Courthouse: Dept. 56</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 57">Stanley Mosk Courthouse: Dept. 57</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 58">Stanley Mosk Courthouse: Dept. 58</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 61">Stanley Mosk Courthouse: Dept. 61</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 62">Stanley Mosk Courthouse: Dept. 62</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 66">Stanley Mosk Courthouse: Dept. 66</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 68">Stanley Mosk Courthouse: Dept. 68</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 69">Stanley Mosk Courthouse: Dept. 69</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 71">Stanley Mosk Courthouse: Dept. 71</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 73">Stanley Mosk Courthouse: Dept. 73</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 74">Stanley Mosk Courthouse: Dept. 74</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 76">Stanley Mosk Courthouse: Dept. 76</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 78">Stanley Mosk Courthouse: Dept. 78</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 82">Stanley Mosk Courthouse: Dept. 82</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 85">Stanley Mosk Courthouse: Dept. 85</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 86">Stanley Mosk Courthouse: Dept. 86</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 89">Stanley Mosk Courthouse: Dept. 89</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 91">Stanley Mosk Courthouse: Dept. 91</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 92">Stanley Mosk Courthouse: Dept. 92</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 93">Stanley Mosk Courthouse: Dept. 93</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 94">Stanley Mosk Courthouse: Dept. 94</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 96">Stanley Mosk Courthouse: Dept. 96</option>
+                    <option value="Stanley Mosk Courthouse:  Dept. 97">Stanley Mosk Courthouse: Dept. 97</option>
+                    <option value="Torrance Courthouse:  Dept. M">Torrance Courthouse: Dept. M</option>
+                    <option value="Van Nuys Courthouse:  Dept. T">Van Nuys Courthouse: Dept. T</option>
+                    <option value="Van Nuys Courthouse:  Dept. U">Van Nuys Courthouse: Dept. U</option>
+                    <option value="Van Nuys Courthouse:  Dept. W">Van Nuys Courthouse: Dept. W</option>
+                </select>
+                <br><br>
+                <input type = "submit" name = "submit" value="Submit to table"/>
+                <input type = "submit" name = "submit" value="Delete from table"/>
+            </form>
+        </div>
+    </body>
+</html>

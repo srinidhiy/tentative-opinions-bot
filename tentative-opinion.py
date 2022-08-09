@@ -10,47 +10,72 @@ from selenium.common.exceptions import NoSuchElementException
 import smtplib
 from email.mime.text import MIMEText
 from datetime import date
+import mysql.connector
 
 
-def SendEmail(recipients, message):
+def SendEmail(recipients, message, courthouse):
     # Use for attachment:
     #https://levelup.gitconnected.com/send-email-using-python-30fc1f203505
-
     fromx = "tentativeopinionsbot@gmail.com"
-    to = recipients
+    print(recipients)
+    # rec = ""
+    # for r in recipients:
+    #     rec += r
+    #     rec += ","
+    # to = rec
     msg = MIMEText(message)
-    msg['Subject'] = f'Tentative Opinions for {date.today()}'
+    msg['Subject'] = f'Tentative Opinions for {courthouse}'
     msg['From'] = fromx
-    msg['To'] = to
+    msg['To'] = ", ".join(recipients)
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
     server.login(fromx, "osokfucfyaxdtjnw")
-    server.sendmail(fromx, to, msg.as_string())
+    server.sendmail(fromx, recipients, msg.as_string())
     server.close()
 
 
 def main():
+    mydb = mysql.connector.connect(host="localhost", user="root", passwd="root", database="tentative_opinions")
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://www.lacourt.org/tentativeRulingNet/ui/main.aspx?casetype=civil")
-    # gets a list of all of the matching options
-    opinion_text = ""
-    try:
-        c1 = driver.find_elements(By.XPATH, "//*[contains(text(), 'Alhambra Courthouse:  Dept. 3')]")
-        for c in c1:
-            c.click()
-            # submit button
-            driver.find_element(By.XPATH, "//*[@id='siteMasterHolder_basicBodyHolder_CivilRuling']/tbody/tr/td/div/table[2]/tbody/tr[5]/td[3]/input[1]").click()
-            # getting full text of "content text"
-            opinion_text += driver.find_element(By.XPATH, "//*[@id='divMainContent']/div/div[3]").text
-            # print(opinion_text)
-            # print("*************END OF TEXT**************")
-            # goes to previous page in browser history
-            driver.back()
-    except NoSuchElementException:
-        print("Courthouse does not have any updates")
-    SendEmail("syerragu@usc.edu", opinion_text)
+    courthouse_query = ("SELECT * FROM Courthouse")
+    bridge_query = ("SELECT * FROM Email_courthouse WHERE courthouse_id=%s")
+    email_query = ("SELECT * FROM Email WHERE email_id=%s")
+    mycursor = mydb.cursor(buffered=True)
+    # get a list of all of the courthouses
+    mycursor.execute(courthouse_query)
+    courthouses = []
+    for courthouse_id, courthouse_name in mycursor:
+        courthouses.append([courthouse_id, courthouse_name])
+    for court in courthouses:
+        opinion_text = ""
+        mycursor.execute(bridge_query, (court[0], ))
+        recipients = []
+        # for each courthouse, get the recipients
+        for emailId, court[0] in mycursor:
+            mycursor2 = mydb.cursor(buffered=True)
+            mycursor2.execute(email_query, (emailId,))
+            for res in mycursor2:
+                recipients.append(res[1])
+        # get opinion text
+        try:
+            c1 = driver.find_elements(By.XPATH, f"//*[contains(text(), '{court[1]}')]")
+            for c in c1:
+                c.click()
+                # submit button
+                driver.find_element(By.XPATH, "//*[@id='siteMasterHolder_basicBodyHolder_CivilRuling']/tbody/tr/td/div/table[2]/tbody/tr[5]/td[3]/input[1]").click()
+                # getting full text of "content text"
+                opinion_text += driver.find_element(By.XPATH, "//*[@id='divMainContent']/div/div[3]").text
+                opinion_text += "\n"
+                opinion_text += "*******************************************"
+                opinion_text += "\n"
+                # goes to previous page in browser history
+                driver.back()
+        except NoSuchElementException:
+            print("Courthouse does not have any updates")
+        SendEmail(recipients, opinion_text, court[1])
     driver.close()
 
 main()
